@@ -16,20 +16,19 @@ jobs:
 
       - name: Extract and Flatten
         run: |
-          # 1. Create a temp directory
-          mkdir -p temp_extract
+          # 1. Create a temporary folder
+          mkdir -p temp_dir
           
-          # 2. Extract into the temp directory
-          # Replace 'your-archive.zip' with your actual filename
-          unzip -qq "cookili.zip" -d temp_extract
+          # 2. Extract into temp_dir
+          unzip -q "cookili.zip" -d temp_dir
           
-          # 3. Move files to the root, ignoring the temp dir and .git
-          # This pulls files out of whatever subfolder the zip might contain
-          cp -rn temp_extract/* .
+          # 3. Move everything from the sub-folder(s) into the root
+          # This finds any folder inside temp_dir and moves its contents to current dir
+          find temp_dir -mindepth 1 -maxdepth 1 -type d -exec mv {}/* . \;
           
           # 4. Clean up
-          rm -rf temp_extract
-
+          rm -rf temp_dir
+          
       - name: Commit changes
         run: |
           git config user.name "github-actions"
