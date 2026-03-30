@@ -16,7 +16,7 @@ jobs:
 
       - name: Extract and Flatten
         run: |
-          unzip -q "cookili.zip" -d .
+          unzip -q "xxx.zip" -d .
           
       - name: Commit changes
         run: |
