@@ -21,7 +21,7 @@ jobs:
           
           # 2. Extract into the temp directory
           # Replace 'your-archive.zip' with your actual filename
-          unzip -qq "your-archive.zip" -d temp_extract
+          unzip -qq "cookili.zip" -d temp_extract
           
           # 3. Move files to the root, ignoring the temp dir and .git
           # This pulls files out of whatever subfolder the zip might contain
