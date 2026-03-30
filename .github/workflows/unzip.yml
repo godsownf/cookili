@@ -1,5 +1,3 @@
-# Code Refactored
-```yaml
 name: CI
 on:
   push:
