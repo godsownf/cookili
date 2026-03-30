@@ -1,6 +1,0 @@
-name = "session-vault"
-main = "src/index.js"
-compatibility_date = "2024-01-01"
-
-# Optional: Add your account details if not logged in via CLI
-# account_id = "your_account_id_here"
