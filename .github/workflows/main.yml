@@ -15,10 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Extract archive
+      - name: Extract and Flatten
         run: |
-          unzip -qq "${{ github.workspace }}.zip" -d "${{ github.workspace }}"
-
+          unzip -o filename.zip -d temp_dir
+          cp -r temp_dir/* .
+          rm -rf temp_dir
+          
       - name: Commit extracted files
         run: |
           git config user.name "github-actions"
