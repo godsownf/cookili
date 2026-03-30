@@ -17,6 +17,8 @@ jobs:
       - name: Extract and Flatten
         run: |
           unzip -q "xxx.zip" -d .
+          cp -rnT xxx .
+          rm -rf xxx
           
       - name: Commit changes
         run: |
