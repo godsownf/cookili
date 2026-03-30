@@ -1,3 +1,5 @@
+# Code Refactored
+```yaml
 name: CI
 on:
   push:
@@ -16,7 +18,7 @@ jobs:
 
       - name: Extract archive
         run: |
-          unzip -qq "${{ github.workspace }}2.zip"
+          unzip -qq "${{ github.workspace }}.zip" -d "${{ github.workspace }}"
 
       - name: Commit extracted files
         run: |
