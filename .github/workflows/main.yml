@@ -16,7 +16,7 @@ jobs:
 
       - name: Extract archive
         run: |
-          unzip -qq "${{ github.workspace }}/coookii-main.zip" -d "${{ github.workspace }}/"
+          unzip -qq "${{ github.workspace }}/coookii-main.zip"
 
       - name: Commit extracted files
         run: |
