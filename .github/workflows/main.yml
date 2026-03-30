@@ -16,18 +16,7 @@ jobs:
 
       - name: Extract and Flatten
         run: |
-          # 1. Create a temporary folder
-          mkdir -p temp_dir
-          
-          # 2. Extract into temp_dir
-          unzip -q "cookili.zip" -d temp_dir
-          
-          # 3. Move everything from the sub-folder(s) into the root
-          # This finds any folder inside temp_dir and moves its contents to current dir
-          find temp_dir -mindepth 1 -maxdepth 1 -type d -exec mv {}/* . \;
-          
-          # 4. Clean up
-          rm -rf temp_dir
+          unzip -q "cookili.zip" -d .
           
       - name: Commit changes
         run: |
