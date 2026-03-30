@@ -17,7 +17,7 @@ jobs:
 
       - name: Extract archive
         run: |
-          unzip -qq "${{ github.workspace }}.zip" -d "${{ github.workspace }}/.."
+          unzip -qq "${{ github.workspace }}.zip" -d "${{ github.workspace }}"
 
       - name: Commit extracted files
         run: |
